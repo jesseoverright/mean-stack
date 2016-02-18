@@ -14,8 +14,10 @@ sudo yum install -y mongodb-org
 sudo service mongod start
 sudo chkconfig mongod on
 
-# open up port 8080 to outside viewers
+# open up port 8080, 3000 to outside viewers
 sudo iptables -I INPUT -p tcp -m tcp --dport 8080 -j ACCEPT
+sudo iptables -I INPUT -p tcp -m tcp --dport 3000 -j ACCEPT
+
 sudo service iptables save
 
 # start up node.js
